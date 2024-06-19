@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\studentController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,12 @@ Route::get('/', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
+
+Route::get('/student', [studentController::class, 'index'])->name('student.index');
+Route::resource('student', StudentController::class);
+// Route::get('/student/tambah', [studentController::class, 'create']);
+// Route::post('/student/store', [studentController::class, 'store']);
+// Route::get('/student/edit/{id}', [studentController::class, 'edit']);
+// Route::put('/student/update/{id}', [studentController::class, 'update']);
+// Route::get('/student/hapus/{id}', [studentController::class, 'delete']);
+// Route::get('/student/destroy/{id}', [studentController::class, 'destroy']);

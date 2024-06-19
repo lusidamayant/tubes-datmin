@@ -3,10 +3,15 @@
         <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
     </a>
 </li>
-<li class="dropdown">
-    <a href="#" class="nav-link has-dropdown"><i class="fas fa-lock"></i><span>Role and Permissions</span></a>
+<li class="side-menus ">
+    <a class="nav-link" href="/student">
+        <i class="fas fa-user-alt"></i><span>Siswa</span>
+    </a>
+</li>
+<!-- <li class="dropdown">
+    <a href="#" class="nav-link has-dropdown"><i class="fas fa-lock"></i><span>Siswa</span></a>
     <ul class="dropdown-menu" style="display: none;">
     <li><a class="nav-link" href="index-0.html">Role</a></li>
     <li class="active"><a class="nav-link" href="index.html">Permissions</a></li>
     </ul>
-</li>
+</li> -->
