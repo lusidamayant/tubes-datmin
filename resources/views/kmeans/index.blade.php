@@ -49,8 +49,10 @@
                             <td>Rp. {{ number_format($clusterSiswa->pendapatan_orang_tua) }}</td>
                             <td>{{ $clusterSiswa->jumlah_tanggungan_orang_tua }}</td>
                             <!-- tampil data clustering -->
-                            @foreach ($clusterSiswa->hasilClustering['jarakDenganCentroidList'] as $jarakCentroid)
-                                <td>{{ $jarakCentroid }}</td>
+                            @foreach ($clusterSiswa->hasilClustering['jarakDenganCentroidList'] as $index => $jarakCentroid)
+                            <td class="{{ $index == $clusterSiswa->hasilClustering['cluster'] ? 'bg-info text-white':'' }}">
+                                {{ number_format($jarakCentroid, 2) }}
+                            </td>
                             @endforeach
                             <td>{{ $clusterSiswa->hasilClustering['cluster'] }}</td>
                         </tr>
@@ -110,7 +112,10 @@
                        
                         { name: 'Cluster $clusterIndex', data: [
                             ...perClusterData.map(mapObjToArray)[$clusterIndex].map(item => {
-                                return [Number(item.pendapatan_orang_tua), item.jumlah_tanggungan_orang_tua]
+                                return [
+                                    Number(item.pendapatan_orang_tua), 
+                                    item.jumlah_tanggungan_orang_tua
+                                ]
                             })
                         ], },
                         ";
