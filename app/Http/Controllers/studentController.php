@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\student;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class studentController extends Controller
 {
     public function index()
     {
-        $student = student::all();
+        $student = Student::all();
         return view('student.index', compact('student'));
     }
     public function create()
@@ -28,7 +28,7 @@ class studentController extends Controller
         'jumlah_tanggungan_orang_tua'=> 'required',
         ]);
 
-        student::create([
+        Student::create([
             'nama'=> $request->nama,
             'alamat' => $request->alamat,
             'tanggal_lahir' => $request->tanggal_lahir,
@@ -42,7 +42,7 @@ class studentController extends Controller
     }
     public function edit($id_student)
     {
-        $student = student::find($id_student);
+        $student = Student::find($id_student);
         return view('student.edit', compact('student'));
     }
 
@@ -58,7 +58,7 @@ class studentController extends Controller
         'jumlah_tanggungan_orang_tua'=> 'required',
         ]);
 
-        $student = student::find($id_student);
+        $student = Student::find($id_student);
 
         $student->update([
             'nama'=> $request->nama,
@@ -75,13 +75,13 @@ class studentController extends Controller
 
     public function delete($id_student)
     {
-        $student = student::find($id_student);
+        $student = Student::find($id_student);
         return view('student.hapus', compact('student'));
     }
 
     public function destroy($id_student)
     {
-        $student = student::find($id_student);
+        $student = Student::find($id_student);
         $student->delete();
         return redirect('/student')->with('success', 'Data berhasil hapus ');
     }

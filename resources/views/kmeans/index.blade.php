@@ -24,8 +24,8 @@
                         <tr>
                             <th>No</th>
                             <th>Nama </th>
-                            <th>Alamat</th>
-                            <th>Tanggal Lahir</th>
+                            <!-- <th>Alamat</th>
+                            <th>Tanggal Lahir</th> -->
                             <th>Jenis Kelamin </th>
                             <th>Pekerjaan Orang Tua</th>
                             <th>Penghasilan Orang Tua</th>
@@ -42,8 +42,8 @@
                         <tr>
                             <td>{{ $index+1 }}</td>
                             <td>{{ $clusterSiswa->nama }}</td>
-                            <td>{{ $clusterSiswa->alamat }}</td>
-                            <td>{{ date_format(date_create($clusterSiswa->tanggal_lahir), 'd M Y') }}</td>
+                            <!-- <td>{{ $clusterSiswa->alamat }}</td>
+                            <td>{{ date_format(date_create($clusterSiswa->tanggal_lahir), 'd M Y') }}</td> -->
                             <td>{{ $clusterSiswa->jenis_kelamin}}</td>
                             <td>{{ $clusterSiswa->pekerjaan_orang_tua}}</td>
                             <td>Rp. {{ number_format($clusterSiswa->pendapatan_orang_tua) }}</td>

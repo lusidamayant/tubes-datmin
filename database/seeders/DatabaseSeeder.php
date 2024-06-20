@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            SiswaSeeder::class
+        ]);
+        
         // User::factory(10)->create();
         User::create([
             "uid" => "superadmin",

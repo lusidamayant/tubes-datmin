@@ -19,7 +19,12 @@
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('web/css/components.css')}}">
     @yield('page_css')
-
+    <style>
+        .table-bordered th {
+            background-color: #6777ef !important;
+            color: white !important;
+        }
+    </style>
     @yield('css')
 </head>
 <body>
