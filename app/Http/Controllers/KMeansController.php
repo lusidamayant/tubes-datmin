@@ -12,7 +12,7 @@ class KMeansController extends Controller
         $clusteringSiswaList = Student::all();
         $jumlahData = $clusteringSiswaList->count();
         
-        $parameterK = 2;
+        $parameterK = 3;
 
 
         // ambil centroid awal acak sesuai parameterK
@@ -27,8 +27,9 @@ class KMeansController extends Controller
         //     array_push($indexCentroidAwalAcak, $acak);
         // }
 
-
-        $indexCentroidAwalAcak = [1, 0];
+        
+        // data acak harusnya tidaklah boleh terlalu acak
+        $indexCentroidAwalAcak = [2, 1, 0];
 
         // ambil data centroid awal dari model data siswa sebanyak parameterK
         $centroidList = [];

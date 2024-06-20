@@ -31,8 +31,9 @@
                             <th>Penghasilan Orang Tua</th>
                             <th>Tanggungan Orang Tua</th>
                             <!-- tampil kolom clustering -->
-                            <th>C_1</th>
-                            <th>C_2</th>
+                            @for($centroidIndex = 0; $centroidIndex < $parameterK; $centroidIndex++)
+                                <th>C_{{$centroidIndex}}</th>
+                            @endfor
                             <th>Cluster</th>
                         </tr>
                     </thead>
@@ -83,15 +84,10 @@
                     echo 'perClusterData.push(' . json_encode($perCluster) . ');  ';
                 }
         ?>
-        // console.log(clusteringSiswaList, [centroidList[0].x1, centroidList[0].x2]);
+        
         function mapObjToArray(obj) {
             return Object.keys(obj).map(key => obj[key]); 
         }
-
-        const cluster0 = perClusterData.map(mapObjToArray)[0].map(item => {
-                                return [Number(item.pendapatan_orang_tua), item.jumlah_tanggungan_orang_tua]
-                            });
-
 
         var options = {
             series: [
