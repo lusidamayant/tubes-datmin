@@ -1,11 +1,16 @@
-<li class="side-menus {{ Request::is('*') ? 'active' : '' }}">
+<li class="side-menus {{ Request::is('') ? 'active' : '' }}">
     <a class="nav-link" href="#">
         <i class="fas fa-tachometer-alt"></i><span>Dashboard</span>
     </a>
 </li>
-<li class="side-menus ">
+<li class="side-menus {{ Request::is('student*') ? 'active' : '' }}">
     <a class="nav-link" href="/student">
         <i class="fas fa-user-alt"></i><span>Siswa</span>
+    </a>
+</li>
+<li class="side-menus {{ Request::is('kmeans*') ? 'active' : '' }}">
+    <a class="nav-link" href="/kmeans">
+        <i class="fas fa-user-alt"></i><span>Clustering Data Siswa</span>
     </a>
 </li>
 <!-- <li class="dropdown">

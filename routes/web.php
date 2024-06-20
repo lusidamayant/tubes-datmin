@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\KMeansController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,8 +24,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/student', [studentController::class, 'index'])->name('student.index');
 Route::resource('student', StudentController::class);
+Route::get('/kmeans', [KMeansController::class, 'index']);
+
+
 // Route::get('/student/tambah', [studentController::class, 'create']);
 // Route::post('/student/store', [studentController::class, 'store']);
 // Route::get('/student/edit/{id}', [studentController::class, 'edit']);

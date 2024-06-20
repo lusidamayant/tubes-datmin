@@ -15,10 +15,6 @@
     <form action="{{ route('student.store') }}" method="POST">
       @csrf
       <div class="mb-3">
-        <label for="id_student" class="form-label">Id Siswa</label>
-        <input type="text" class="form-control" id="id_student" name="id_student">
-      </div>
-      <div class="mb-3">
         <label for="nama" class="form-label">Nama Siswa</label>
         <input type="text" class="form-control" id="nama" name="nama">
       </div>
